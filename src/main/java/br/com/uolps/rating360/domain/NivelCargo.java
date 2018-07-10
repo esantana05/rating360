@@ -5,13 +5,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(
-        name = "nivel_cargo"
+        name = "nivelCargo"
 )
 public class NivelCargo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_niv_cargo;
+    private Long id_niv_cargo;
     private String nivel_cargo;
 
     public NivelCargo(){}
@@ -20,11 +20,11 @@ public class NivelCargo {
         this.nivel_cargo = nivel_cargo;
     }
 
-    public int getId_niv_cargo() {
+    public Long getId_niv_cargo() {
         return id_niv_cargo;
     }
 
-    public void setId_niv_cargo(int id_niv_cargo) {
+    public void setId_niv_cargo(Long id_niv_cargo) {
         this.id_niv_cargo = id_niv_cargo;
     }
 

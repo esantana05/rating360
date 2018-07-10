@@ -1,5 +1,6 @@
-package br.com.uolps.rating360.dao;
+package br.com.uolps.rating360.dao.implementations;
 
+import br.com.uolps.rating360.dao.interfaces.CargoDao;
 import br.com.uolps.rating360.domain.Cargo;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class CargoDaoImpl implements CargoDao{
+public class CargoDaoImpl implements CargoDao {
 
     @PersistenceContext
     private EntityManager entityManager;

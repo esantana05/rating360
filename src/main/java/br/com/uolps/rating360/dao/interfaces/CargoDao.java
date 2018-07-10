@@ -1,4 +1,4 @@
-package br.com.uolps.rating360.dao;
+package br.com.uolps.rating360.dao.interfaces;
 
 import br.com.uolps.rating360.domain.Cargo;
 

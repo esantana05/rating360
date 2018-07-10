@@ -10,7 +10,7 @@ public class Profissional {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_profissional;
+    private Long id_profissional;
     private String nome;
     private int id_cargo;
     private int id_niv_cargo;
@@ -23,11 +23,11 @@ public class Profissional {
         this.id_niv_cargo = id_niv_cargo;
     }
 
-    public int getId_profissional() {
+    public Long getId_profissional() {
         return id_profissional;
     }
 
-    public void setId_profissional(int id_profissional) {
+    public void setId_profissional(Long id_profissional) {
         this.id_profissional = id_profissional;
     }
 

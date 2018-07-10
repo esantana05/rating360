@@ -24,6 +24,12 @@ public class CargoRestController {
     @Autowired
     private CargoService service;
 
+    @GetMapping("/{id_cargo}")
+    @ResponseStatus(HttpStatus.OK)
+    public Cargo getCargo(@PathVariable("id_cargo") Long id){
+        return service.findById(id);
+    }
+
     @PostMapping
     public ResponseEntity<Void> salvar(@RequestBody Cargo cargo) {
 

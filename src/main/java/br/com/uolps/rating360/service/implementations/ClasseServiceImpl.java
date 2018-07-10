@@ -1,7 +1,8 @@
-package br.com.uolps.rating360.service;
+package br.com.uolps.rating360.service.implementations;
 
-import br.com.uolps.rating360.dao.CargoDao;
-import br.com.uolps.rating360.domain.Cargo;
+import br.com.uolps.rating360.dao.interfaces.ClasseDao;
+import br.com.uolps.rating360.domain.Classe;
+import br.com.uolps.rating360.service.interfaces.ClasseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,21 +11,21 @@ import java.util.List;
 
 @Service
 @Transactional
-public class CargoServiceImpl implements CargoService {
+public class ClasseServiceImpl implements ClasseService {
 
     @Autowired
-    private CargoDao dao;
+    private ClasseDao dao;
 
     @Override
-    public void save(Cargo cargo) {
-        dao.save(cargo);
+    public void save(Classe classe) {
+        dao.save(classe);
     }
 
     @Override
-    public void update(Long id, Cargo cargo) {
-        cargo.setId_cargo(id);
+    public void update(Long id, Classe classe) {
+        classe.setId_classe(id);
         dao.findById(id);
-        dao.update(cargo);
+        dao.update(classe);
     }
 
     @Override
@@ -33,12 +34,12 @@ public class CargoServiceImpl implements CargoService {
     }
 
     @Override @Transactional(readOnly = true)
-    public Cargo findById(Long id) {
+    public Classe findById(Long id) {
         return dao.findById(id);
     }
 
     @Override @Transactional(readOnly = true)
-    public List<Cargo> findAll() {
+    public List<Classe> findAll() {
         return dao.findAll();
     }
 }

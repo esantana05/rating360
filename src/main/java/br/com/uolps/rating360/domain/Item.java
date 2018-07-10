@@ -10,7 +10,7 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_item;
+    private Long id_item;
     private String nome_item;
 
     public Item(){}
@@ -19,11 +19,11 @@ public class Item {
         this.nome_item = nome_item;
     }
 
-    public int getId_item() {
+    public Long getId_item() {
         return id_item;
     }
 
-    public void setId_item(int id_item) {
+    public void setId_item(Long id_item) {
         this.id_item = id_item;
     }
 

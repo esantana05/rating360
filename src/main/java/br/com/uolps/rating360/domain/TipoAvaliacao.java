@@ -4,12 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(
-        name = "tipo_avaliacao"
+        name = "tipoAvaliacao"
 )
 public class TipoAvaliacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_tipo;
+    private Long id_tipo;
     private String tipo_avaliacao;
 
     public TipoAvaliacao(){}
@@ -18,11 +18,11 @@ public class TipoAvaliacao {
         this.tipo_avaliacao = tipo_avaliacao;
     }
 
-    public int getId_tipo() {
+    public Long getId_tipo() {
         return id_tipo;
     }
 
-    public void setId_tipo(int id_tipo) {
+    public void setId_tipo(Long id_tipo) {
         this.id_tipo = id_tipo;
     }
 

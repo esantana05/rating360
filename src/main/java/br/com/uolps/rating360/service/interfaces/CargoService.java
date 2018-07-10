@@ -1,4 +1,4 @@
-package br.com.uolps.rating360.service;
+package br.com.uolps.rating360.service.interfaces;
 
 import br.com.uolps.rating360.domain.Cargo;
 

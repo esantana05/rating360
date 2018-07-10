@@ -5,12 +5,12 @@ import br.com.uolps.rating360.service.interfaces.CargoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
+import java.net.URI;
 import java.util.List;
 
 
@@ -23,6 +23,20 @@ public class CargoRestController {
 
     @Autowired
     private CargoService service;
+
+    @PostMapping
+    public ResponseEntity<Void> salvar(@RequestBody Cargo cargo) {
+
+        service.save(cargo);
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id_cargo}")
+                .buildAndExpand(cargo.getId_cargo())
+                .toUri();
+
+        return ResponseEntity.created(location).build();
+    }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
